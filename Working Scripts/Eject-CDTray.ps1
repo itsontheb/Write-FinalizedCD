@@ -1,16 +1,15 @@
 ﻿Function Eject-CDTray
 {
     # Figure out the type needed for $tray to work with $trays
+    # Go through comment to ensure instances for $tray type is added
     <#.
         .SYNOPSIS
-            Burns the contents of a folder to a CD
+            Opens the Local Machine's CD Tray.
         .DESCRIPTION
-            This function retrieves the contents of a specified folder path and burns
-            a CD with the specified title. There is the option to select the CD/DVD-ROM
-            Drive to utilize for the burn by providing the DeviceID. There is also a
-            switch to finalize the media so it cannot be written to again.
+            This function ejects all CD Trays on the Local Machine. If the 
+            $Tray parameter is utilized it will only eject that drive.
         .EXAMPLE
-            PS> Write-CD -Path 'C:\Folder' -CDTitle 'SAMPLE TITLE' -Finalize
+            PS> Eject-CDTray -Tray ''
         .Parameter Tray
             Name of the tray to eject. If not specified all trays are ejected.
             Required name of tray can be found from:
@@ -25,7 +24,7 @@
 					ValueFromPipeline = $True,
 					ValueFromPipelineByPropertyName = $True,
 					HelpMessage = 'What CD Tray would you like to eject')]
-		[string]$Tray     
+		[string]$Tray   
     )
 
     begin
