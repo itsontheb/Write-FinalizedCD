@@ -274,7 +274,7 @@ $trayCBox                        = New-Object system.Windows.Forms.ComboBox
 $trayCBox.text                   = "$FILLER"
 $trayCBox.width                  = 250
 $trayCBox.height                 = 25
-$trayCBox.location               = New-Object System.Drawing.Point(15,85)
+$trayCBox.location               = New-Object System.Drawing.Point(15,40)
 $trayCBox.Font                   = 'Microsoft Sans Serif,10'
 
 $trayLbl                         = New-Object system.Windows.Forms.Label
@@ -282,26 +282,29 @@ $trayLbl.text                    = "Utilize which CD-Tray to burn media?"
 $trayLbl.AutoSize                = $true
 $trayLbl.width                   = 25
 $trayLbl.height                  = 10
-$trayLbl.location                = New-Object System.Drawing.Point(15,65)
+$trayLbl.location                = New-Object System.Drawing.Point(15,20)
 $trayLbl.Font                    = 'Microsoft Sans Serif,10,style=Bold'
 
 $folderLbl                       = New-Object system.Windows.Forms.Label
-$folderLbl.text                  = "Select folder to burn to media"
+$folderLbl.text                  = "Folders/Files to be burned"
 $folderLbl.AutoSize              = $true
 $folderLbl.width                 = 25
 $folderLbl.height                = 10
-$folderLbl.location              = New-Object System.Drawing.Point(14,130)
+$folderLbl.location              = New-Object System.Drawing.Point(15,65)
 $folderLbl.Font                  = 'Microsoft Sans Serif,10,style=Bold'
 
 $folderTxtBox                    = New-Object system.Windows.Forms.TextBox
 $folderTxtBox.multiline          = $false
 $folderTxtBox.width              = 250
-$folderTxtBox.height             = 20
-$folderTxtBox.location           = New-Object System.Drawing.Point(14,150)
+$folderTxtBox.height             = 150
+$folderTxtBox.location           = New-Object System.Drawing.Point(15,85)
 $folderTxtBox.Font               = 'Microsoft Sans Serif,10'
+$folderTxtBox.Text               = ''
+$folderTxtBox.MultiLine          = $true
+$folderTxtBox.ScrollBars         = 'Vertical'
 
 $optGroup                        = New-Object system.Windows.Forms.Groupbox
-$optGroup.height                 = 220
+$optGroup.height                 = 150
 $optGroup.width                  = 200
 $optGroup.text                   = "Options for burning media"
 $optGroup.location               = New-Object System.Drawing.Point(285,20)
@@ -310,7 +313,7 @@ $folderBtn                       = New-Object system.Windows.Forms.Button
 $folderBtn.text                  = "Browse"
 $folderBtn.width                 = 60
 $folderBtn.height                = 30
-$folderBtn.location              = New-Object System.Drawing.Point(31,195)
+$folderBtn.location              = New-Object System.Drawing.Point(295,195)
 $folderBtn.Font                  = 'Microsoft Sans Serif,10,style=Bold'
 
 $FinalizeChBox                   = New-Object system.Windows.Forms.CheckBox
@@ -349,7 +352,7 @@ $startBtn                        = New-Object system.Windows.Forms.Button
 $startBtn.text                   = "&Burn Media"
 $startBtn.width                  = 125
 $startBtn.height                 = 50
-$startBtn.location               = New-Object System.Drawing.Point(125,185)
+$startBtn.location               = New-Object System.Drawing.Point(365,185)
 $startBtn.Font                   = 'Microsoft Sans Serif,10,style=Bold'
 $startBtn.Add_Click({ 
 
@@ -359,6 +362,10 @@ $Form.controls.AddRange(@($trayCBox,$trayLbl,$folderLbl,$folderTxtBox,$optGroup,
 $optGroup.controls.AddRange(@($FinalizeChBox,$ejectChBox,$notifyChBox,$cTrayChBox))
 
 #region gui events {
+$folderBtn.Add_Click({
+    
+})
+
 $startBtn.Add_Click({ 
     
 
