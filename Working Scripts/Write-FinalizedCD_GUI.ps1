@@ -363,11 +363,28 @@ $optGroup.controls.AddRange(@($FinalizeChBox,$ejectChBox,$notifyChBox,$cTrayChBo
 
 #region gui events {
 $folderBtn.Add_Click({
-    
+    Get-FolderPrompt
 })
 
 $startBtn.Add_Click({ 
     
+    # Get Size of files/folders
+    
+    # Get size of CD
+
+    # Compare
+
+    # Notify too much
+
+    # else write cd
+    if ($placeholder)
+    {
+        Write-CD -Path -DiskDrive -CDTitle -Finalize
+    }
+    else
+    {
+        # too much
+    }
 
     if ($ejectChBox.Checked)
     {
